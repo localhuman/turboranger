@@ -1,25 +1,196 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeueLTStd-Md.otf">
+            <string>HelveticaNeueLTStd-Md</string>
+            <string>HelveticaNeueLTStd-Md</string>
+            <string>HelveticaNeueLTStd-Md</string>
+            <string>HelveticaNeueLTStd-Md</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="6EO-fP-Rzz" userLabel="rpmgauge" customClass="RPMGauge">
+                                <rect key="frame" x="16" y="180" width="300" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RPMGauge.png" id="D25-ps-niY">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1023" id="K20-ly-FdB">
+                                        <rect key="frame" x="25" y="340" width="249" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="rpmChanged:" destination="6EO-fP-Rzz" eventType="valueChanged" id="XIQ-Ia-OPo"/>
+                                        </connections>
+                                    </slider>
+                                    <view contentMode="scaleToFill" id="RZH-Uf-f04">
+                                        <rect key="frame" x="8" y="0.0" width="284" height="281"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guage_needle.png" id="CzJ-OO-vOv">
+                                                <rect key="frame" x="31" y="123" width="158" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 rpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ea4-HG-8a6">
+                                        <rect key="frame" x="77" y="260" width="147" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTStd-Md" family="Helvetica Neue LT Std" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="gaugeBG" destination="D25-ps-niY" id="4Tq-KD-ecn"/>
+                                    <outlet property="needleHolder" destination="RZH-Uf-f04" id="dXr-JJ-iQ5"/>
+                                    <outlet property="needleImage" destination="CzJ-OO-vOv" id="N8O-9F-wkK"/>
+                                    <outlet property="rpmChanger" destination="K20-ly-FdB" id="fKR-Lq-tGi"/>
+                                    <outlet property="rpmLabel" destination="Ea4-HG-8a6" id="8X3-RH-7E9"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="m8f-dT-U6z" userLabel="afrgauge" customClass="AFRGauge">
+                                <rect key="frame" x="362" y="180" width="300" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AFRGauge.png" id="LtA-hc-9UN">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1023" id="j5F-0r-UMe">
+                                        <rect key="frame" x="25" y="340" width="249" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="afrChanged:" destination="m8f-dT-U6z" eventType="valueChanged" id="f5j-dQ-REo"/>
+                                        </connections>
+                                    </slider>
+                                    <view contentMode="scaleToFill" id="aPO-Ix-jnx">
+                                        <rect key="frame" x="8" y="0.0" width="284" height="281"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guage_needle.png" id="ORC-hl-GiD">
+                                                <rect key="frame" x="31" y="123" width="158" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.7 AFR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Pv-pu-cwR">
+                                        <rect key="frame" x="76" y="260" width="147" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTStd-Md" family="Helvetica Neue LT Std" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="afrChanger" destination="j5F-0r-UMe" id="hUt-KE-2Or"/>
+                                    <outlet property="afrLabel" destination="3Pv-pu-cwR" id="dda-vu-SMI"/>
+                                    <outlet property="gaugeBG" destination="LtA-hc-9UN" id="Xf3-h6-A5I"/>
+                                    <outlet property="needleHolder" destination="aPO-Ix-jnx" id="swV-iS-OOb"/>
+                                    <outlet property="needleImage" destination="ORC-hl-GiD" id="kVF-P5-tlL"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="18z-fG-eSf" userLabel="psigauge" customClass="PSIGauge">
+                                <rect key="frame" x="708" y="180" width="300" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PSIGauge.png" id="s7W-gq-5vs">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1023" id="yhu-HS-50r">
+                                        <rect key="frame" x="25" y="340" width="249" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="PSIChanged:" destination="18z-fG-eSf" eventType="valueChanged" id="88K-BY-N2C"/>
+                                        </connections>
+                                    </slider>
+                                    <view contentMode="scaleToFill" id="XMD-Pf-2v2">
+                                        <rect key="frame" x="8" y="0.0" width="284" height="281"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guage_needle.png" id="B5W-Kr-Oiw">
+                                                <rect key="frame" x="31" y="123" width="158" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 PSI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dXJ-Jc-6lr">
+                                        <rect key="frame" x="77" y="260" width="147" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTStd-Md" family="Helvetica Neue LT Std" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="PSIChanger" destination="yhu-HS-50r" id="Szn-UV-87l"/>
+                                    <outlet property="PSILabel" destination="dXJ-Jc-6lr" id="DVh-XX-3lG"/>
+                                    <outlet property="gaugeBG" destination="s7W-gq-5vs" id="GH2-28-thh"/>
+                                    <outlet property="needleHolder" destination="XMD-Pf-2v2" id="HV5-mh-LSV"/>
+                                    <outlet property="needleImage" destination="B5W-Kr-Oiw" id="kUs-qf-aI4"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.3L TURBO Ranger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n3C-lG-7qP">
+                                <rect key="frame" x="267" y="89" width="491" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTStd-Md" family="Helvetica Neue LT Std" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="2" height="-2"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="283" y="393"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I5I-Td-TNc">
+            <objects>
+                <viewController id="mTh-U2-H6r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fvX-GI-gDU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpk-qj-oOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="AFRGauge.png" width="391" height="400"/>
+        <image name="PSIGauge.png" width="390" height="400"/>
+        <image name="RPMGauge.png" width="400" height="400"/>
+        <image name="guage_needle.png" width="474" height="106"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

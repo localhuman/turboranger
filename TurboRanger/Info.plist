@@ -6,6 +6,10 @@
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.modern-carpentry.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -30,10 +34,30 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HelveticaNeueLTStd-Lt</string>
+		<string>HelveticaNeueLTStd-LtCn</string>
+		<string>HelveticaNeueLTStd-LtCnO</string>
+		<string>HelveticaNeueLTStd-LtEx</string>
+		<string>HelveticaNeueLTStd-LtExO</string>
+		<string>HelveticaNeueLTStd-Ltlt</string>
+		<string>HelveticaNeueLTStd-Md</string>
+		<string>HelveticaNeueLTStd-MdCn</string>
+		<string>HelveticaNeueLTStd-MdCnO</string>
+		<string>HelveticaNeueLTStd-MdEx</string>
+		<string>HelveticaNeueLTStd-MdExO</string>
+		<string>HelveticaNeueLTStd-Mdlt</string>
+		<string>HelveticaNeueLTStd-Roman</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
